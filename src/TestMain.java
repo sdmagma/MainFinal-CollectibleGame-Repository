@@ -1,5 +1,20 @@
 import java.util.Random;
 import java.util.LinkedList;
+/**
+ * Lead Author(s):
+ * @author Stephen Basilio
+ * 
+ * Other contributors:
+ * None
+ * 
+ * References:
+ * 
+ * Version/date: 2024-06 (4.32.0)
+ * 
+ * Responsibilities of class:
+ * Tests classes and methods. No actual contribution to the project. 
+ * Will be deleted once project is finished. For now, tests will be saved here. 
+ */
 public class TestMain
 {
 	public static void main(String[] args)
