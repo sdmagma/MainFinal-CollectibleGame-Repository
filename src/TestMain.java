@@ -87,64 +87,69 @@ public class TestMain
 //		System.out.println(random.chooseCollectible(lootTable));
 //		System.out.println(random.chooseCollectible(lootTable));
 		
-		Randomizer random = new Randomizer();
-		
-		LinkedList<Common> common = new LinkedList<Common>();
-		LinkedList<Rare> rare = new LinkedList<Rare>();
-		LinkedList<Epic> epic = new LinkedList<Epic>();
-		LinkedList<Legendary> legendary = new LinkedList<Legendary>();
-		LootTable lootTable = new LootTable(common, rare, epic, legendary);
-		
-		Common watch = new Common("Watch");
-		Common boots = new Common("Pair of Boots");
-		Common disarmednuke = new Common("Disarmed Nuke");
-		Common coin = new Common("Coin");
-		Common torch = new Common("Torch");
-		Common brick = new Common("Relatively Heavy Brick");
-		Common fish = new Common("Fish");
-		Common thread = new Common("Thread");
-		Common slotmachine = new Common("Broken Slot Machine");
-		Common picture = new Common("Forgotten Memory");
-		
-		lootTable.addCommon(watch);
-		lootTable.addCommon(boots);
-		lootTable.addCommon(disarmednuke);
-		lootTable.addCommon(coin);
-		lootTable.addCommon(torch);
-		lootTable.addCommon(brick);
-		lootTable.addCommon(fish);
-		lootTable.addCommon(thread);
-		lootTable.addCommon(slotmachine);
-		lootTable.addCommon(picture);
-		
-		Rare pancake = new Rare("Pancake");
-		Rare giftcard = new Rare("Giftcard");
-		Rare shrek2 = new Rare("Copy of Shrek 2 on BluRay");
-		Rare lawnmower = new Rare("Lawnmower");
-		Rare sword = new Rare("Shiny Sword");
-		
-		lootTable.addRare(pancake);
-		lootTable.addRare(giftcard);
-		lootTable.addRare(shrek2);
-		lootTable.addRare(lawnmower);
-		lootTable.addRare(sword);
-		
-		Epic jetpack = new Epic("Jetpack");
-		Epic tungsten = new Epic("Tungsten Rod");
-		Epic armednuke = new Epic("Armed Nuke");
-		
-		lootTable.addEpic(jetpack);
-		lootTable.addEpic(tungsten);
-		lootTable.addEpic(armednuke);
-		
-		Legendary mcchicken = new Legendary("McChicken");
-		
-		lootTable.addLegendary(mcchicken);
-		
-		System.out.println(random.chooseCollectible(lootTable));
-		System.out.println(random.chooseCollectible(lootTable));
-		System.out.println(random.chooseCollectible(lootTable));
-		System.out.println(random.chooseCollectible(lootTable));
-		System.out.println(random.chooseCollectible(lootTable));
+//		Randomizer random = new Randomizer();
+//		
+//		LinkedList<Common> common = new LinkedList<Common>();
+//		LinkedList<Rare> rare = new LinkedList<Rare>();
+//		LinkedList<Epic> epic = new LinkedList<Epic>();
+//		LinkedList<Legendary> legendary = new LinkedList<Legendary>();
+//		LootTable lootTable = new LootTable(common, rare, epic, legendary);
+//		
+//		Common watch = new Common("Watch");
+//		Common boots = new Common("Pair of Boots");
+//		Common disarmednuke = new Common("Disarmed Nuke");
+//		Common coin = new Common("Coin");
+//		Common torch = new Common("Torch");
+//		Common brick = new Common("Relatively Heavy Brick");
+//		Common fish = new Common("Fish");
+//		Common thread = new Common("Thread");
+//		Common slotmachine = new Common("Broken Slot Machine");
+//		Common picture = new Common("Forgotten Memory");
+//		
+//		lootTable.addCommon(watch);
+//		lootTable.addCommon(boots);
+//		lootTable.addCommon(disarmednuke);
+//		lootTable.addCommon(coin);
+//		lootTable.addCommon(torch);
+//		lootTable.addCommon(brick);
+//		lootTable.addCommon(fish);
+//		lootTable.addCommon(thread);
+//		lootTable.addCommon(slotmachine);
+//		lootTable.addCommon(picture);
+//		
+//		Rare pancake = new Rare("Pancake");
+//		Rare giftcard = new Rare("Giftcard");
+//		Rare shrek2 = new Rare("Copy of Shrek 2 on BluRay");
+//		Rare lawnmower = new Rare("Lawnmower");
+//		Rare sword = new Rare("Shiny Sword");
+//		
+//		lootTable.addRare(pancake);
+//		lootTable.addRare(giftcard);
+//		lootTable.addRare(shrek2);
+//		lootTable.addRare(lawnmower);
+//		lootTable.addRare(sword);
+//		
+//		Epic jetpack = new Epic("Jetpack");
+//		Epic tungsten = new Epic("Tungsten Rod");
+//		Epic armednuke = new Epic("Armed Nuke");
+//		
+//		lootTable.addEpic(jetpack);
+//		lootTable.addEpic(tungsten);
+//		lootTable.addEpic(armednuke);
+//		
+//		Legendary mcchicken = new Legendary("McChicken");
+//		
+//		lootTable.addLegendary(mcchicken);
+//		
+//		System.out.println(random.chooseCollectible(lootTable));
+//		System.out.println(random.chooseCollectible(lootTable));
+//		System.out.println(random.chooseCollectible(lootTable));
+//		System.out.println(random.chooseCollectible(lootTable));
+//		System.out.println(random.chooseCollectible(lootTable));
+		ItemReader.readTextFile("ItemFile.txt");
+		if(Randomizer.chooseCollectible() != null)
+		{
+		System.out.println(Randomizer.chooseCollectible().toString());
+		}
 	}
 }
