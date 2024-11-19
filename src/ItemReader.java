@@ -1,4 +1,3 @@
-import java.util.LinkedList;
 import java.util.Scanner;
 import java.io.*;
 /**
@@ -19,6 +18,10 @@ import java.io.*;
  */
 public class ItemReader
 {
+	/**
+	 * Purpose: Reads a text file and creates new Collectibles to be stored in LootTable.
+	 * @param fileName
+	 */
 	public static void readTextFile(String fileName)
 	{
 		LootTable lootTable = new LootTable(); //ItemReader has-a LootTable
@@ -33,31 +36,35 @@ public class ItemReader
 		{
 			scan = new Scanner(myFile); //defines scanner. If the file does not exist, throw FileNotFoundException
 			
-			//Code is meant to check if the next line has a keyword such as Common, Rare, Epic, or Legendary
-			//If it does, it will skip a line and then scan the next line
-			//The next line will become a Collectible Object, and will then be added to the LootTable
+			//Checks if the next line has a keyword such as Common, Rare, Epic, or Legendary
+			//If it does, use index 1, since it has the name, to create a new Collectible
+			//It will then be added to the LootTable
 			while(scan.hasNext())
 			{
+				//Stores next scan in a String array. This will then be used to create Collectibles
+				//Index 0 is the rarity, while index 1 is the name
 				String[] newCollectible = scan.nextLine().split(",", 2);
+				String rarity = newCollectible[0];
+				String itemName = newCollectible[1];
 				
-				if(newCollectible[0].equals("Common"))
+				if(rarity.equals("Common"))
 				{
-					Common item = new Common(newCollectible[1]);
+					Common item = new Common(itemName);
 					lootTable.addCommon(item);
 				}
-				else if(newCollectible[0].equals("Rare"))
+				else if(rarity.equals("Rare"))
 				{
-					Rare item = new Rare(newCollectible[1]);
+					Rare item = new Rare(itemName);
 					lootTable.addRare(item);
 				}
-				else if(newCollectible[0].equals("Epic"))
+				else if(rarity.equals("Epic"))
 				{
-					Epic item = new Epic(newCollectible[1]);
+					Epic item = new Epic(itemName);
 					lootTable.addEpic(item);
 				}
-				else if(newCollectible[0].equals("Legendary"))
+				else if(rarity.equals("Legendary"))
 				{
-					Legendary item = new Legendary(newCollectible[1]);
+					Legendary item = new Legendary(itemName);
 					lootTable.addLegendary(item);
 				}
 			}

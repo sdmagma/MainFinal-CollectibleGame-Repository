@@ -13,14 +13,15 @@ import java.util.LinkedList;
  * 
  * Responsibilities of class:
  * Used to insert custom Collectibles into different Lists based on their rarity. 
- * Can be used to add and return Collectibles, while also being able to get the size of the loottable for that rarity. 
+ * Can be used to add and return Collectibles, while also being able to get the size of the lootTable for that rarity.
+ * LinkedLists are static to make LootTable have the same lootTable
  */
 public class LootTable
 {
-	private static LinkedList<Common> commonLootTable = new LinkedList<Common>(); //LootTable has-a commonLT, or common loot table
-	private static LinkedList<Rare> rareLootTable = new LinkedList<Rare>(); //LootTable has-a rareLT, or rare loot table
-	private static LinkedList<Epic> epicLootTable = new LinkedList<Epic>(); //LootTable has-a epicLT, or epic loot table
-	private static LinkedList<Legendary> legendaryLootTable = new LinkedList<Legendary>(); //LootTable has-a legendaryLT, or legendary loot table
+	private static LinkedList<Common> commonLootTable = new LinkedList<Common>(); //LootTable has-a common loot table
+	private static LinkedList<Rare> rareLootTable = new LinkedList<Rare>(); //LootTable has-a rare loot table
+	private static LinkedList<Epic> epicLootTable = new LinkedList<Epic>(); //LootTable has-a epic loot table
+	private static LinkedList<Legendary> legendaryLootTable = new LinkedList<Legendary>(); //LootTable has-a legendary loot table
 	
 	/**
 	 * Purpose: Adds collectible with common rarity.

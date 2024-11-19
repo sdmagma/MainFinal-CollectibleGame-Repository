@@ -15,8 +15,6 @@
  */
 public class Common extends Collectibles
 {
-	private String name; //Common has-a name
-	
 	/**
 	 * Purpose: Constructor that sets the name of the Collectible.
 	 * @param name

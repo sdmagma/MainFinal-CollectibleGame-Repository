@@ -15,8 +15,6 @@
  */
 public class Legendary extends Collectibles
 {
-	private String name; //Legendary has-a name
-	
 	/**
 	 * Purpose: Constructor that sets the name of the Collectible.
 	 * @param name

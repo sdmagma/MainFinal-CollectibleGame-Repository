@@ -26,8 +26,8 @@ public class Randomizer
 	 */
 	public Collectibles chooseCollectible()
 	{
-		LootTable lootTable = new LootTable();
-		Random rarityPicker = new Random(); //Necessary to pick out a random number.
+		LootTable lootTable = new LootTable(); //Randomizer has-a lootTable. Used to get a Collectible.
+		Random rarityPicker = new Random(); //Randomizer has-a rarity picker. Necessary to pick out a random number.
 		int rarity = rarityPicker.nextInt(100); //Picks a random number from 0 inclusive to 100 exclusive.
 		//If and else if statements will pick rarity. If the number is low, get a legendary. If the number is higher, get a lower rarity item. 
 		//Picks through the lootTable and gets a specific rarity, then gets a collectible by choosing a random number based on the size of the lootTable on the rarity.
