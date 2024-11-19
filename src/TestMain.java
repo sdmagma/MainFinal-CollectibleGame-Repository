@@ -1,9 +1,9 @@
 import java.util.Random;
+
 import java.util.Scanner;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.LinkedList;
-import java.util.NoSuchElementException;
 /**
  * Lead Author(s):
  * @author Stephen Basilio
@@ -150,19 +150,18 @@ public class TestMain
 //		System.out.println(random.chooseCollectible(lootTable));
 //		System.out.println(random.chooseCollectible(lootTable));
 //		System.out.println(random.chooseCollectible(lootTable));
-		System.out.println("Test");
-		Randomizer random = new Randomizer();
-		ItemReader.readTextFile("ItemFileUpdated.txt");
-		if(random.chooseCollectible() != null)
-		{
-			System.out.println(random.chooseCollectible().toString());
-		}
 		
-//		LinkedList<Common> common = new LinkedList<Common>();
-//		LinkedList<Rare> rare = new LinkedList<Rare>();
-//		LinkedList<Epic> epic = new LinkedList<Epic>();
-//		LinkedList<Legendary> legendary = new LinkedList<Legendary>();
-//		LootTable lootTable = new LootTable(common, rare, epic, legendary);
+//		System.out.println("Test");
+//		Randomizer random = new Randomizer();
+//		ItemReader.readTextFile("ItemFileUpdated.txt");
+//		System.out.println(random.chooseCollectible().toString());
+//		System.out.println(random.chooseCollectible().toString());
+//		System.out.println(random.chooseCollectible().toString());
+//		System.out.println(random.chooseCollectible().toString());
+//		System.out.println(random.chooseCollectible().toString());
+//		System.out.println(random.chooseCollectible().toString());
+		
+//		LootTable lootTable = new LootTable();
 //		File myFile = new File("ItemFileUpdated.txt");
 //		//Next, create a new scanner that starts with null
 //		//In the try block, we will create a new scanner as long as the file exists
@@ -184,25 +183,25 @@ public class TestMain
 //				{
 //					Common item = new Common(newCollectible[1]);
 //					lootTable.addCommon(item);
-//					System.out.println(item.toString());
+////					System.out.println(item.toString());
 //				}
 //				else if(newCollectible[0].equals("Rare"))
 //				{
 //					Rare item = new Rare(newCollectible[1]);
 //					lootTable.addRare(item);
-//					System.out.println(item.toString());
+////					System.out.println(item.toString());
 //				}
 //				else if(newCollectible[0].equals("Epic"))
 //				{
 //					Epic item = new Epic(newCollectible[1]);
 //					lootTable.addEpic(item);
-//					System.out.println(item.toString());
+////					System.out.println(item.toString());
 //				}
 //				else if(newCollectible[0].equals("Legendary"))
 //				{
 //					Legendary item = new Legendary(newCollectible[1]);
 //					lootTable.addLegendary(item);
-//					System.out.println(item.toString());
+////					System.out.println(item.toString());
 //				}
 //			}
 //		}
@@ -221,5 +220,13 @@ public class TestMain
 //				scan.close();
 //			}
 //		}
+//		
+//		Random rarityPicker = new Random();
+//		System.out.println(lootTable.getCommonSize());
+//		System.out.println(lootTable.getRareSize());
+//		System.out.println(lootTable.getEpicSize());
+//		System.out.println(lootTable.getLegendarySize());
+//		
+//		System.out.println(lootTable.getCommon(rarityPicker.nextInt(lootTable.getCommonSize())));
 	}
 }

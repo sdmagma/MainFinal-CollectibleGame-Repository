@@ -21,6 +21,7 @@ public class ItemReader
 {
 	public static void readTextFile(String fileName)
 	{
+		LootTable lootTable = new LootTable(); //ItemReader has-a LootTable
 		//Start by making a file object to open the file
 		File myFile = new File(fileName);
 		//Next, create a new scanner that starts with null
@@ -42,22 +43,22 @@ public class ItemReader
 				if(newCollectible[0].equals("Common"))
 				{
 					Common item = new Common(newCollectible[1]);
-					LootTable.addCommon(item);
+					lootTable.addCommon(item);
 				}
 				else if(newCollectible[0].equals("Rare"))
 				{
 					Rare item = new Rare(newCollectible[1]);
-					LootTable.addRare(item);
+					lootTable.addRare(item);
 				}
 				else if(newCollectible[0].equals("Epic"))
 				{
 					Epic item = new Epic(newCollectible[1]);
-					LootTable.addEpic(item);
+					lootTable.addEpic(item);
 				}
 				else if(newCollectible[0].equals("Legendary"))
 				{
 					Legendary item = new Legendary(newCollectible[1]);
-					LootTable.addLegendary(item);
+					lootTable.addLegendary(item);
 				}
 			}
 		}

@@ -26,41 +26,26 @@ public class Randomizer
 	 */
 	public Collectibles chooseCollectible()
 	{
+		LootTable lootTable = new LootTable();
 		Random rarityPicker = new Random(); //Necessary to pick out a random number.
 		int rarity = rarityPicker.nextInt(100); //Picks a random number from 0 inclusive to 100 exclusive.
 		//If and else if statements will pick rarity. If the number is low, get a legendary. If the number is higher, get a lower rarity item. 
 		//Picks through the lootTable and gets a specific rarity, then gets a collectible by choosing a random number based on the size of the lootTable on the rarity.
 		if(rarity < 3)
 		{
-			if(LootTable.getLegendarySize() == 0)
-			{
-				return null;
-			}
-			return LootTable.getLegendary(rarityPicker.nextInt(LootTable.getLegendarySize()));
+			return lootTable.getLegendary(rarityPicker.nextInt(lootTable.getLegendarySize()));
 		}
 		else if(rarity < 10)
 		{
-			if(LootTable.getEpicSize() != 0)
-			{
-				return null;
-			}
-			return LootTable.getEpic(rarityPicker.nextInt(LootTable.getEpicSize()));
+			return lootTable.getEpic(rarityPicker.nextInt(lootTable.getEpicSize()));
 		}
 		else if(rarity < 30)
 		{
-			if(LootTable.getLegendarySize() != 0)
-			{
-				return null;
-			}
-			return LootTable.getRare(rarityPicker.nextInt(LootTable.getRareSize()));
+			return lootTable.getRare(rarityPicker.nextInt(lootTable.getRareSize()));
 		}
 		else
 		{
-			if(LootTable.getLegendarySize() != 0)
-			{
-				return null;
-			}
-			return LootTable.getCommon(rarityPicker.nextInt(LootTable.getCommonSize()));
+			return lootTable.getCommon(rarityPicker.nextInt(lootTable.getCommonSize()));
 		}
 	}
 }

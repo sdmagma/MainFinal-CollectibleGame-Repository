@@ -26,7 +26,7 @@ public class LootTable
 	 * Purpose: Adds collectible with common rarity.
 	 * @param item
 	 */
-	public static void addCommon(Common item)
+	public void addCommon(Common item)
 	{
 		commonLootTable.add(item);
 	}
@@ -35,7 +35,7 @@ public class LootTable
 	 * Purpose: Adds collectible with rare rarity.
 	 * @param item
 	 */
-	public static void addRare(Rare item)
+	public void addRare(Rare item)
 	{
 		rareLootTable.add(item);
 	}
@@ -44,7 +44,7 @@ public class LootTable
 	 * Purpose: Adds collectible with epic rarity.
 	 * @param item
 	 */
-	public static void addEpic(Epic item)
+	public void addEpic(Epic item)
 	{
 		epicLootTable.add(item);
 	}
@@ -53,7 +53,7 @@ public class LootTable
 	 * Purpose: Adds collectible with legendary rarity.
 	 * @param item
 	 */
-	public static void addLegendary(Legendary item)
+	public void addLegendary(Legendary item)
 	{
 		legendaryLootTable.add(item);
 	}
@@ -62,7 +62,7 @@ public class LootTable
 	 * Purpose: Returns collectible with common rarity.
 	 * @param item
 	 */
-	public static Common getCommon(int index)
+	public Common getCommon(int index)
 	{
 		return commonLootTable.get(index);
 	}
@@ -71,7 +71,7 @@ public class LootTable
 	 * Purpose: Returns collectible with rare rarity.
 	 * @param item
 	 */
-	public static Rare getRare(int index)
+	public Rare getRare(int index)
 	{
 		return rareLootTable.get(index);
 	}
@@ -80,7 +80,7 @@ public class LootTable
 	 * Purpose: Returns collectible with epic rarity.
 	 * @param item
 	 */
-	public static Epic getEpic(int index)
+	public Epic getEpic(int index)
 	{
 		return epicLootTable.get(index);
 	}
@@ -89,7 +89,7 @@ public class LootTable
 	 * Purpose: Returns collectible with legendary rarity.
 	 * @param item
 	 */
-	public static Legendary getLegendary(int index)
+	public Legendary getLegendary(int index)
 	{
 		return legendaryLootTable.get(index);
 	}
@@ -98,7 +98,7 @@ public class LootTable
 	 * Purpose: Returns size of common loot table.
 	 * @param item
 	 */
-	public static int getCommonSize()
+	public int getCommonSize()
 	{
 		return commonLootTable.size();
 	}
@@ -107,7 +107,7 @@ public class LootTable
 	 * Purpose: Returns size of rare loot table.
 	 * @param item
 	 */
-	public static int getRareSize()
+	public int getRareSize()
 	{
 		return rareLootTable.size();
 	}
@@ -116,7 +116,7 @@ public class LootTable
 	 * Purpose: Returns size of epic loot table.
 	 * @param item
 	 */
-	public static int getEpicSize()
+	public int getEpicSize()
 	{
 		return epicLootTable.size();
 	}
@@ -125,7 +125,7 @@ public class LootTable
 	 * Purpose: Returns size of legendary loot table.
 	 * @param item
 	 */
-	public static int getLegendarySize()
+	public int getLegendarySize()
 	{
 		return legendaryLootTable.size();
 	}
