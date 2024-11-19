@@ -15,133 +15,118 @@ import java.util.LinkedList;
  * Used to insert custom Collectibles into different Lists based on their rarity. 
  * Can be used to add and return Collectibles, while also being able to get the size of the loottable for that rarity. 
  */
-public final class LootTable
+public class LootTable
 {
-	private final LinkedList<Common> commonLT; //LootTable has-a commonLT, or common loot table
-	private final LinkedList<Rare> rareLT; //LootTable has-a rareLT, or rare loot table
-	private final LinkedList<Epic> epicLT; //LootTable has-a epicLT, or epic loot table
-	private final LinkedList<Legendary> legendaryLT; //LootTable has-a legendaryLT, or legendary loot table
-	
-	/**
-	 * Purpose: Constructor that stores Lists for all rarities.
-	 * @param commonLT
-	 * @param rareLT
-	 * @param epicLT
-	 * @param legendaryLT
-	 */
-	public LootTable(LinkedList<Common> commonLT, LinkedList<Rare> rareLT, LinkedList<Epic> epicLT, LinkedList<Legendary> legendaryLT)
-	{
-		this.commonLT = commonLT;
-		this.rareLT = rareLT;
-		this.epicLT = epicLT;
-		this.legendaryLT = legendaryLT;
-	}
+	private static LinkedList<Common> commonLootTable = new LinkedList<Common>(); //LootTable has-a commonLT, or common loot table
+	private static LinkedList<Rare> rareLootTable = new LinkedList<Rare>(); //LootTable has-a rareLT, or rare loot table
+	private static LinkedList<Epic> epicLootTable = new LinkedList<Epic>(); //LootTable has-a epicLT, or epic loot table
+	private static LinkedList<Legendary> legendaryLootTable = new LinkedList<Legendary>(); //LootTable has-a legendaryLT, or legendary loot table
 	
 	/**
 	 * Purpose: Adds collectible with common rarity.
 	 * @param item
 	 */
-	public void addCommon(Common item)
+	public static void addCommon(Common item)
 	{
-		commonLT.add(item);
+		commonLootTable.add(item);
 	}
 	
 	/**
 	 * Purpose: Adds collectible with rare rarity.
 	 * @param item
 	 */
-	public void addRare(Rare item)
+	public static void addRare(Rare item)
 	{
-		rareLT.add(item);
+		rareLootTable.add(item);
 	}
 	
 	/**
 	 * Purpose: Adds collectible with epic rarity.
 	 * @param item
 	 */
-	public void addEpic(Epic item)
+	public static void addEpic(Epic item)
 	{
-		epicLT.add(item);
+		epicLootTable.add(item);
 	}
 	
 	/**
 	 * Purpose: Adds collectible with legendary rarity.
 	 * @param item
 	 */
-	public void addLegendary(Legendary item)
+	public static void addLegendary(Legendary item)
 	{
-		legendaryLT.add(item);
+		legendaryLootTable.add(item);
 	}
 
 	/**
 	 * Purpose: Returns collectible with common rarity.
 	 * @param item
 	 */
-	public Common getCommon(int index)
+	public static Common getCommon(int index)
 	{
-		return commonLT.get(index);
+		return commonLootTable.get(index);
 	}
 	
 	/**
 	 * Purpose: Returns collectible with rare rarity.
 	 * @param item
 	 */
-	public Rare getRare(int index)
+	public static Rare getRare(int index)
 	{
-		return rareLT.get(index);
+		return rareLootTable.get(index);
 	}
 	
 	/**
 	 * Purpose: Returns collectible with epic rarity.
 	 * @param item
 	 */
-	public Epic getEpic(int index)
+	public static Epic getEpic(int index)
 	{
-		return epicLT.get(index);
+		return epicLootTable.get(index);
 	}
 	
 	/**
 	 * Purpose: Returns collectible with legendary rarity.
 	 * @param item
 	 */
-	public Legendary getLegendary(int index)
+	public static Legendary getLegendary(int index)
 	{
-		return legendaryLT.get(index);
+		return legendaryLootTable.get(index);
 	}
 	
 	/**
 	 * Purpose: Returns size of common loot table.
 	 * @param item
 	 */
-	public int getCommonSize()
+	public static int getCommonSize()
 	{
-		return commonLT.size();
+		return commonLootTable.size();
 	}
 	
 	/**
 	 * Purpose: Returns size of rare loot table.
 	 * @param item
 	 */
-	public int getRareSize()
+	public static int getRareSize()
 	{
-		return rareLT.size();
+		return rareLootTable.size();
 	}
 	
 	/**
 	 * Purpose: Returns size of epic loot table.
 	 * @param item
 	 */
-	public int getEpicSize()
+	public static int getEpicSize()
 	{
-		return epicLT.size();
+		return epicLootTable.size();
 	}
 	
 	/**
 	 * Purpose: Returns size of legendary loot table.
 	 * @param item
 	 */
-	public int getLegendarySize()
+	public static int getLegendarySize()
 	{
-		return legendaryLT.size();
+		return legendaryLootTable.size();
 	}
 }

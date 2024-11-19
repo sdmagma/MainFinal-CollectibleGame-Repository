@@ -1,5 +1,9 @@
 import java.util.Random;
+import java.util.Scanner;
+import java.io.File;
+import java.io.FileNotFoundException;
 import java.util.LinkedList;
+import java.util.NoSuchElementException;
 /**
  * Lead Author(s):
  * @author Stephen Basilio
@@ -146,10 +150,76 @@ public class TestMain
 //		System.out.println(random.chooseCollectible(lootTable));
 //		System.out.println(random.chooseCollectible(lootTable));
 //		System.out.println(random.chooseCollectible(lootTable));
-		ItemReader.readTextFile("ItemFile.txt");
-		if(Randomizer.chooseCollectible() != null)
+		System.out.println("Test");
+		Randomizer random = new Randomizer();
+		ItemReader.readTextFile("ItemFileUpdated.txt");
+		if(random.chooseCollectible() != null)
 		{
-		System.out.println(Randomizer.chooseCollectible().toString());
+			System.out.println(random.chooseCollectible().toString());
 		}
+		
+//		LinkedList<Common> common = new LinkedList<Common>();
+//		LinkedList<Rare> rare = new LinkedList<Rare>();
+//		LinkedList<Epic> epic = new LinkedList<Epic>();
+//		LinkedList<Legendary> legendary = new LinkedList<Legendary>();
+//		LootTable lootTable = new LootTable(common, rare, epic, legendary);
+//		File myFile = new File("ItemFileUpdated.txt");
+//		//Next, create a new scanner that starts with null
+//		//In the try block, we will create a new scanner as long as the file exists
+//		Scanner scan = null;
+//		
+//		//In the try block, scan is defined to read the file myFile, and will return the content of the file in a long String
+//		try
+//		{
+//			scan = new Scanner(myFile); //defines scanner. If the file does not exist, throw FileNotFoundException
+//			
+//			//Code is meant to check if the next line has a keyword such as Common, Rare, Epic, or Legendary
+//			//If it does, it will skip a line and then scan the next line
+//			//The next line will become a Collectible Object, and will then be added to the LootTable
+//			while(scan.hasNext())
+//			{
+//				String[] newCollectible = scan.nextLine().split(",", 2);
+//				
+//				if(newCollectible[0].equals("Common"))
+//				{
+//					Common item = new Common(newCollectible[1]);
+//					lootTable.addCommon(item);
+//					System.out.println(item.toString());
+//				}
+//				else if(newCollectible[0].equals("Rare"))
+//				{
+//					Rare item = new Rare(newCollectible[1]);
+//					lootTable.addRare(item);
+//					System.out.println(item.toString());
+//				}
+//				else if(newCollectible[0].equals("Epic"))
+//				{
+//					Epic item = new Epic(newCollectible[1]);
+//					lootTable.addEpic(item);
+//					System.out.println(item.toString());
+//				}
+//				else if(newCollectible[0].equals("Legendary"))
+//				{
+//					Legendary item = new Legendary(newCollectible[1]);
+//					lootTable.addLegendary(item);
+//					System.out.println(item.toString());
+//				}
+//			}
+//		}
+//		catch(FileNotFoundException exception) //Catches an exception if a file does not exist
+//		{
+//			System.out.println("File was not found");
+//		}
+//		catch(Exception exception)
+//		{
+//			System.out.println("Problem was found");
+//		}
+//		finally //Closes the scanner once it is empty
+//		{
+//			if(scan!=null)
+//			{
+//				scan.close();
+//			}
+//		}
 	}
 }

@@ -21,14 +21,6 @@ public class ItemReader
 {
 	public static void readTextFile(String fileName)
 	{
-		//The following is used for adding objects to the LootTable
-		//Not sure if there is an easier way to do this
-		LinkedList<Common> common = new LinkedList<Common>();
-		LinkedList<Rare> rare = new LinkedList<Rare>();
-		LinkedList<Epic> epic = new LinkedList<Epic>();
-		LinkedList<Legendary> legendary = new LinkedList<Legendary>();
-		LootTable lootTable = new LootTable(common, rare, epic, legendary);
-		
 		//Start by making a file object to open the file
 		File myFile = new File(fileName);
 		//Next, create a new scanner that starts with null
@@ -45,29 +37,27 @@ public class ItemReader
 			//The next line will become a Collectible Object, and will then be added to the LootTable
 			while(scan.hasNext())
 			{
-				if(scan.next().equals("Common"))
+				String[] newCollectible = scan.nextLine().split(",", 2);
+				
+				if(newCollectible[0].equals("Common"))
 				{
-					scan.nextLine();
-					Common item = new Common(scan.nextLine());
-					lootTable.addCommon(item);
+					Common item = new Common(newCollectible[1]);
+					LootTable.addCommon(item);
 				}
-				else if(scan.next().equals("Rare"))
+				else if(newCollectible[0].equals("Rare"))
 				{
-					scan.nextLine();
-					Rare item = new Rare(scan.nextLine());
-					lootTable.addRare(item);
+					Rare item = new Rare(newCollectible[1]);
+					LootTable.addRare(item);
 				}
-				else if(scan.next().equals("Epic"))
+				else if(newCollectible[0].equals("Epic"))
 				{
-					scan.nextLine();
-					Epic item = new Epic(scan.nextLine());
-					lootTable.addEpic(item);
+					Epic item = new Epic(newCollectible[1]);
+					LootTable.addEpic(item);
 				}
-				else if(scan.next().equals("Legendary"))
+				else if(newCollectible[0].equals("Legendary"))
 				{
-					scan.nextLine();
-					Legendary item = new Legendary(scan.nextLine());
-					lootTable.addLegendary(item);
+					Legendary item = new Legendary(newCollectible[1]);
+					LootTable.addLegendary(item);
 				}
 			}
 		}
