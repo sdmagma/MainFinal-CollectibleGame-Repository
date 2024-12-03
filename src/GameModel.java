@@ -1,5 +1,20 @@
 import java.util.Random;
-
+/**
+ * Lead Author(s):
+ * @author Stephen Basilio
+ * 
+ * Other contributors:
+ * None
+ * 
+ * References:
+ * GoneFishingModel
+ * 
+ * Version/date: 2024-06 (4.32.0)
+ * 
+ * Responsibilities of class:
+ * GameModel creates the map and fills rooms with Collectibles and monsters.
+ * Can also check what is in a room with its entityAt() method.
+ */
 public class GameModel
 {
 	private static final int MAPSIZE = 10; //GameModel has-a MAPSIZE. Sets the mapsize to be a 10x10 square.
