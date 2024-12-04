@@ -16,35 +16,5 @@ import javax.swing.JButton;
  */
 public class DoorButton extends JButton
 {
-	private int upDistance, downDistance, leftDistance, rightDistance;
-	private int rowLocation;
-	private int columnLocation;
-	
-	public DoorButton(int up, int down, int left, int right)
-	{
-		upDistance = up;
-		downDistance = down;
-		leftDistance = left;
-		rightDistance = right;
-	}
-
-	public void setRow(int row)
-	{
-		rowLocation = row;
-	}
-	
-	public void setColumn(int column)
-	{
-		columnLocation = column;
-	}
-	
-	public int getRow()
-	{
-		return rowLocation;
-	}
-	
-	public int getColumn()
-	{
-		return columnLocation;
-	}
+	//Needs revision
 }

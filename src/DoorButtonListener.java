@@ -29,9 +29,9 @@ public class DoorButtonListener implements ActionListener //DoorButtonListener i
 	}
 
 	public void actionPerformed(ActionEvent e)
-	{
-		int row = doorButton.getRow();
-		int column = doorButton.getColumn();
+	{	
+		//if and if else cases for when player goes up, down, left, right. 
+		//Button itself tells whether to go which direction.
 		
 		String roomStatus = gameModel.entityAt(row, column);
 		if(roomStatus == "Nothing")
