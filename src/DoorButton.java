@@ -12,32 +12,28 @@ import javax.swing.JButton;
  * Version/date: 2024-06 (4.32.0)
  * 
  * Responsibilities of class:
- * DoorButton is a JButton that includes changing the location of the character on the map.
+ * DoorButton is a JButton that .
  */
 public class DoorButton extends JButton
 {
-	private String direction;
+	private String direction; //DoorButton has-a direction
 	
+	/**
+	 * Purpose: Sets button name and direction.
+	 * @param newDirection
+	 */
 	public DoorButton(String newDirection)
 	{
 		super(newDirection);
 		direction = newDirection;
 	}
 	
+	/**
+	 * Purpose: Returns the direction.
+	 * @return
+	 */
 	public String getDirection()
 	{
-		switch(direction)
-		{
-		case "Left":
-			return "Left";
-		case "Right":
-			return "Right";
-		case "Up":
-			return "Up";
-		case "Down":
-			return "Down";
-			default:
-				return null;
-		}
+		return direction;
 	}
 }

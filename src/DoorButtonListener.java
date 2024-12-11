@@ -19,10 +19,16 @@ import javax.swing.JOptionPane;
  */
 public class DoorButtonListener implements ActionListener //DoorButtonListener is an Action Listener
 {
-	private GameModel gameModel;
-	private GameView gameView;
-	private DoorButton doorButton;
+	private GameModel gameModel; //DoorButtonListener has-a gameModel
+	private GameView gameView; //DoorButtonListener has-a gameView
+	private DoorButton doorButton; //DoorButtonListener has-a doorButton
 	
+	/**
+	 * Purpose: Sets the MVC for the DoorButtonListener.
+	 * @param gameModel
+	 * @param gameView
+	 * @param doorButton
+	 */
 	public DoorButtonListener(GameModel gameModel, GameView gameView, DoorButton doorButton)
 	{
 		this.gameModel = gameModel;
@@ -30,16 +36,21 @@ public class DoorButtonListener implements ActionListener //DoorButtonListener i
 		this.doorButton = doorButton;
 	}
 
+	/**
+	 * Purpose: Updates player position and checks what is on the tile the player lands on.
+	 * @param e
+	 */
 	public void actionPerformed(ActionEvent e)
 	{	
-		//if and if else cases for when player goes up, down, left, right. 
-		//Button itself tells whether to go which direction.
-		
+		//Get the direction of the button pressed
 		String direction = doorButton.getDirection();
+		//Update the gameModel with the new direction. Will update player position
 		gameModel.updatePlayerPosition(direction);
-		System.out.println(direction + " has been pressed");
-		int row = gameModel.getRow();
-		int column = gameModel.getColumn();
+		System.out.println(direction + " has been pressed\n"); //Message for the console when button has been successfully pressed
+		//Get positions to check entityAt that location in the switch case
+		int row = gameModel.getRow(); 
+		int column = gameModel.getColumn(); 
+		//Will check entity in new location. Will kill player and end game when it is a monster, otherwise keep the game going.
 		switch(gameModel.entityAt(row, column))
 		{
 		case("Monster"):
@@ -50,6 +61,7 @@ public class DoorButtonListener implements ActionListener //DoorButtonListener i
 			Randomizer randomizer = new Randomizer();
 			JOptionPane.showMessageDialog(null, randomizer.chooseCollectible(), "Found", JOptionPane.INFORMATION_MESSAGE);
 			break;
+		case("Nothing"):
 			default:
 				JOptionPane.showMessageDialog(null, "Found... Nothing.", "Found", JOptionPane.INFORMATION_MESSAGE);
 		}

@@ -25,8 +25,8 @@ public class GameModel
 	private boolean[][] collectibleChecker = new boolean[MAPSIZE][MAPSIZE]; //GameModel has-a collectibleChecker. Will set the room to have a collectible.
 	private boolean[][] emptyRoomChecker = new boolean[MAPSIZE][MAPSIZE]; //GameModel has-a emptyRoomCheck. Will set the room to be empty.
 	private boolean[][] playerPosition = new boolean[MAPSIZE][MAPSIZE]; //GameModel has-a playerPosition. Sets the position of the player.
-	private static int playerRowPosition = 0;
-	private static int playerColumnPosition = 0;
+	private static int playerRowPosition = 0; //GameModel has-a playerRowPosition
+	private static int playerColumnPosition = 0; //GameModel has-a playerColumnPosition
 	
 	/**
 	 * Purpose: GameModel places monsters and collectibles in the map using booleans and if statements.
@@ -34,10 +34,13 @@ public class GameModel
 	public GameModel()
 	{
 		Random randomNumberGenerator = new Random();
+		//On startup, fill up LootTable
 		ItemReader itemReader = new ItemReader();
 		itemReader.readTextFile("ItemFileUpdated.txt");
 		
+		//Set player to initial location
 		playerPosition[playerRowPosition][playerColumnPosition] = true;
+		//For loop sets collectibles and monsters in rooms
 		for(int room = 0; room < MAPSIZE*MAPSIZE; room++)
 		{
 			int row, column; //Used to fill a location on the map
@@ -59,17 +62,26 @@ public class GameModel
 				collectibleChecker[row][column] = true;
 			}
 		}
+		//Makes sure that there is nothing where the player spawns
 		monsterChecker[playerRowPosition][playerColumnPosition] = false;
 		collectibleChecker[playerRowPosition][playerColumnPosition] = false;
 		emptyRoomChecker[playerRowPosition][playerColumnPosition] = true;
 	}
 	
+	/**
+	 * Purpose: Moves the player and keeps the player from moving out of bounds.
+	 * @param direction
+	 */
 	public void updatePlayerPosition(String direction)
 	{
-		System.out.println("I am going " + direction);
+		System.out.println("I am going " + direction); //Check for the console
+		//Try to change location. If it's out of bounds, catch the exception
 		try
 		{
+			//temporaryPosition is used to get an exception if player goes out of bounds
 			boolean[][] temporaryPosition = new boolean[MAPSIZE][MAPSIZE];
+			//Switch case sets old location to false, then shifts the player
+			//This is applied for whatever direction is sent through the parameter
 			switch(direction)
 			{
 			case "Left":
@@ -93,23 +105,35 @@ public class GameModel
 				playerColumnPosition--;
 				break;
 				default:
+					//If no location is found for whatever reason, print to console
 					System.out.println("Didn't get a direction");
 			}
+			//After the shift, set new location to true
 			playerPosition[playerRowPosition][playerColumnPosition] = true; 
+			//Print to console for the new location
 			System.out.println("Row: " + playerRowPosition + "\nColumn: " + playerColumnPosition);
 		}
 		catch(ArrayIndexOutOfBoundsException e)
 		{
+			//Send a new popup for an out of bounds error
 			JOptionPane.showMessageDialog(null, "Out of Bounds!", "Error", JOptionPane.INFORMATION_MESSAGE);
-			System.out.println("Didn't work mane");
+			System.out.println("Didn't work");
 		}
 	}
 	
+	/**
+	 * Purpose: Return's the player's row position.
+	 * @return playerRowPosition
+	 */
 	public int getRow()
 	{
 		return playerRowPosition;
 	}
 	
+	/**
+	 * Purpose: Return's the player's column position.
+	 * @return playerColumnPosition
+	 */
 	public int getColumn()
 	{
 		return playerColumnPosition;
