@@ -1,5 +1,7 @@
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+
+import javax.swing.JOptionPane;
 /**
  * Lead Author(s):
  * @author Stephen Basilio
@@ -33,18 +35,23 @@ public class DoorButtonListener implements ActionListener //DoorButtonListener i
 		//if and if else cases for when player goes up, down, left, right. 
 		//Button itself tells whether to go which direction.
 		
-		String roomStatus = gameModel.entityAt(row, column);
-		if(roomStatus == "Nothing")
+		String direction = doorButton.getDirection();
+		gameModel.updatePlayerPosition(direction);
+		System.out.println(direction + " has been pressed");
+		int row = gameModel.getRow();
+		int column = gameModel.getColumn();
+		switch(gameModel.entityAt(row, column))
 		{
-			
-		}
-		else if(roomStatus == "Collectible")
-		{
-			
-		}
-		else if(roomStatus == "Monster")
-		{
-			
+		case("Monster"):
+			JOptionPane.showMessageDialog(null, "Dude... you died", "Found", JOptionPane.INFORMATION_MESSAGE);
+			System.exit(0);
+			break;
+		case("Collectible"):
+			Randomizer randomizer = new Randomizer();
+			JOptionPane.showMessageDialog(null, randomizer.chooseCollectible(), "Found", JOptionPane.INFORMATION_MESSAGE);
+			break;
+			default:
+				JOptionPane.showMessageDialog(null, "Found... Nothing.", "Found", JOptionPane.INFORMATION_MESSAGE);
 		}
 	}
 }

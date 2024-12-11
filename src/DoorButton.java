@@ -16,5 +16,28 @@ import javax.swing.JButton;
  */
 public class DoorButton extends JButton
 {
-	//Needs revision
+	private String direction;
+	
+	public DoorButton(String newDirection)
+	{
+		super(newDirection);
+		direction = newDirection;
+	}
+	
+	public String getDirection()
+	{
+		switch(direction)
+		{
+		case "Left":
+			return "Left";
+		case "Right":
+			return "Right";
+		case "Up":
+			return "Up";
+		case "Down":
+			return "Down";
+			default:
+				return null;
+		}
+	}
 }
