@@ -10,18 +10,28 @@
  * Version/date: 2024-06 (4.32.0)
  * 
  * Responsibilities of class:
- * Rarity class for Common Collectibles.
+ * Rarity class for Legendary Collectibles.
  * Sets the name and uses a toString().
+ * Also returns rarity.
  */
-public class Common extends Collectibles
+public class LegendaryCollectible extends Collectibles
 {
 	/**
 	 * Purpose: Constructor that sets the name of the Collectible.
 	 * @param name
 	 */
-	public Common(String name) 
+	public LegendaryCollectible(String name) 
 	{
 		super(name);
+	}
+	
+	/**
+	 * Purpose: Returns the rarity.
+	 * @return "Legendary"
+	 */
+	public String getRarity()
+	{
+		return "Legendary";
 	}
 	
 	/**
@@ -30,6 +40,6 @@ public class Common extends Collectibles
 	 */
 	public String toString()
 	{
-		return "Common " + getName() + "!";
+		return "Legendary " + getName() + "!";
 	}
 }

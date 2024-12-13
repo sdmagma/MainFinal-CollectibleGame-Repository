@@ -8,9 +8,11 @@ import java.util.Random;
  * None
  * 
  * References:
- * https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Random.html
- * https://www.digitalocean.com/community/tutorials/java-random
- * GoneFishingModel
+ * Oracle. Random.
+ * Retrieved from https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/Random.html
+ * DigitalOcean (2022). Java Random.
+ * Retrieved from https://www.digitalocean.com/community/tutorials/java-random
+ * GoneFishingModel.java from CISC191GUI.
  * 
  * Version/date: 2024-06 (4.32.0)
  * 

@@ -10,7 +10,7 @@ import javax.swing.*;
  * None
  * 
  * References:
- * GoneFishingView
+ * GoneFishingView from CISC191GUI.
  * 
  * Version/date: 2024-06 (4.32.0)
  * 

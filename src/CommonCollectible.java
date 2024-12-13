@@ -10,18 +10,28 @@
  * Version/date: 2024-06 (4.32.0)
  * 
  * Responsibilities of class:
- * Rarity class for Epic Collectibles.
+ * Rarity class for Common Collectibles.
  * Sets the name and uses a toString().
+ * Also returns rarity.
  */
-public class Epic extends Collectibles
+public class CommonCollectible extends Collectibles
 {
 	/**
 	 * Purpose: Constructor that sets the name of the Collectible.
 	 * @param name
 	 */
-	public Epic(String name) 
+	public CommonCollectible(String name) 
 	{
 		super(name);
+	}
+	
+	/**
+	 * Purpose: Returns the rarity.
+	 * @return "Common"
+	 */
+	public String getRarity()
+	{
+		return "Common";
 	}
 	
 	/**
@@ -30,6 +40,6 @@ public class Epic extends Collectibles
 	 */
 	public String toString()
 	{
-		return "Epic " + getName() + "!";
+		return "Common " + getName() + "!";
 	}
 }

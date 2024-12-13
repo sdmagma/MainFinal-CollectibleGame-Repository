@@ -9,7 +9,7 @@ import javax.swing.JOptionPane;
  * None
  * 
  * References:
- * GoneFishingModel
+ * GoneFishingModel.java from CISC191GUI
  * 
  * Version/date: 2024-06 (4.32.0)
  * 
@@ -34,9 +34,9 @@ public class GameModel
 	public GameModel()
 	{
 		Random randomNumberGenerator = new Random();
-		//On startup, fill up LootTable
-		ItemReader itemReader = new ItemReader();
-		itemReader.readTextFile("ItemFileUpdated.txt");
+		//On startup, fill up LootTable and clear last save
+		ItemReader.clearContents("CollectiblesInventory.txt");
+		ItemReader.readTextFile("ItemFileUpdated.txt");
 		
 		//Set player to initial location
 		playerPosition[playerRowPosition][playerColumnPosition] = true;

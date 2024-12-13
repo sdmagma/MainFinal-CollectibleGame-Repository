@@ -7,12 +7,12 @@ import javax.swing.JButton;
  * None
  * 
  * References:
- * FishingButton
+ * FishingButton.java from CISC191GUI.
  * 
  * Version/date: 2024-06 (4.32.0)
  * 
  * Responsibilities of class:
- * DoorButton is a JButton that .
+ * DoorButton is a JButton that stores direction.
  */
 public class DoorButton extends JButton
 {

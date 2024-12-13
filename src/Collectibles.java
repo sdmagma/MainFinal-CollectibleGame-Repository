@@ -26,11 +26,20 @@ public class Collectibles
 	}
 	
 	/**
-	 * Purpose: Returns the name for the Collectible. Used for Rarity toString();
+	 * Purpose: Returns the name for the Collectible. Used for toString();
 	 * @return name
 	 */
 	public String getName()
 	{
 		return name;
+	}
+	
+	/**
+	 * Purpose: Returns the rarity of a collectible.
+	 * @return "No rarity"
+	 */
+	public String getRarity()
+	{
+		return "No rarity";
 	}
 }

@@ -7,7 +7,8 @@ import java.util.LinkedList;
  * None
  * 
  * References:
- * https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/LinkedList.html
+ * Oracle. Class LinkedList<E>.
+ * Retrieved from https://docs.oracle.com/en/java/javase/11/docs/api/java.base/java/util/LinkedList.html
  * 
  * Version/date: 2024-06 (4.32.0)
  * 
@@ -18,16 +19,16 @@ import java.util.LinkedList;
  */
 public class LootTable
 {
-	private static LinkedList<Common> commonLootTable = new LinkedList<Common>(); //LootTable has-a common loot table
-	private static LinkedList<Rare> rareLootTable = new LinkedList<Rare>(); //LootTable has-a rare loot table
-	private static LinkedList<Epic> epicLootTable = new LinkedList<Epic>(); //LootTable has-a epic loot table
-	private static LinkedList<Legendary> legendaryLootTable = new LinkedList<Legendary>(); //LootTable has-a legendary loot table
+	private static LinkedList<CommonCollectible> commonLootTable = new LinkedList<CommonCollectible>(); //LootTable has-a common loot table
+	private static LinkedList<RareCollectible> rareLootTable = new LinkedList<RareCollectible>(); //LootTable has-a rare loot table
+	private static LinkedList<EpicCollectible> epicLootTable = new LinkedList<EpicCollectible>(); //LootTable has-a epic loot table
+	private static LinkedList<LegendaryCollectible> legendaryLootTable = new LinkedList<LegendaryCollectible>(); //LootTable has-a legendary loot table
 	
 	/**
 	 * Purpose: Adds collectible with common rarity.
 	 * @param item
 	 */
-	public void addCommon(Common item)
+	public void addCommon(CommonCollectible item)
 	{
 		commonLootTable.add(item);
 	}
@@ -36,7 +37,7 @@ public class LootTable
 	 * Purpose: Adds collectible with rare rarity.
 	 * @param item
 	 */
-	public void addRare(Rare item)
+	public void addRare(RareCollectible item)
 	{
 		rareLootTable.add(item);
 	}
@@ -45,7 +46,7 @@ public class LootTable
 	 * Purpose: Adds collectible with epic rarity.
 	 * @param item
 	 */
-	public void addEpic(Epic item)
+	public void addEpic(EpicCollectible item)
 	{
 		epicLootTable.add(item);
 	}
@@ -54,7 +55,7 @@ public class LootTable
 	 * Purpose: Adds collectible with legendary rarity.
 	 * @param item
 	 */
-	public void addLegendary(Legendary item)
+	public void addLegendary(LegendaryCollectible item)
 	{
 		legendaryLootTable.add(item);
 	}
@@ -63,7 +64,7 @@ public class LootTable
 	 * Purpose: Returns collectible with common rarity.
 	 * @param item
 	 */
-	public Common getCommon(int index)
+	public CommonCollectible getCommon(int index)
 	{
 		return commonLootTable.get(index);
 	}
@@ -72,7 +73,7 @@ public class LootTable
 	 * Purpose: Returns collectible with rare rarity.
 	 * @param item
 	 */
-	public Rare getRare(int index)
+	public RareCollectible getRare(int index)
 	{
 		return rareLootTable.get(index);
 	}
@@ -81,7 +82,7 @@ public class LootTable
 	 * Purpose: Returns collectible with epic rarity.
 	 * @param item
 	 */
-	public Epic getEpic(int index)
+	public EpicCollectible getEpic(int index)
 	{
 		return epicLootTable.get(index);
 	}
@@ -90,7 +91,7 @@ public class LootTable
 	 * Purpose: Returns collectible with legendary rarity.
 	 * @param item
 	 */
-	public Legendary getLegendary(int index)
+	public LegendaryCollectible getLegendary(int index)
 	{
 		return legendaryLootTable.get(index);
 	}

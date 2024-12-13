@@ -10,7 +10,7 @@ import javax.swing.JOptionPane;
  * None
  * 
  * References:
- * FishingButtonListener
+ * FishingButtonListener from CISC191GUI.
  * 
  * Version/date: 2024-06 (4.32.0)
  * 
@@ -54,16 +54,21 @@ public class DoorButtonListener implements ActionListener //DoorButtonListener i
 		switch(gameModel.entityAt(row, column))
 		{
 		case("Monster"):
-			JOptionPane.showMessageDialog(null, "Dude... you died", "Found", JOptionPane.INFORMATION_MESSAGE);
+			JOptionPane.showMessageDialog(null, "A monster got you! Game Over.", "Game Over", JOptionPane.INFORMATION_MESSAGE);
 			System.exit(0);
 			break;
 		case("Collectible"):
-			Randomizer randomizer = new Randomizer();
-			JOptionPane.showMessageDialog(null, randomizer.chooseCollectible(), "Found", JOptionPane.INFORMATION_MESSAGE);
+			Randomizer randomizer = new Randomizer(); //Chooses collectible.
+			Collectibles newItem = randomizer.chooseCollectible(); //Get new collectible.
+			String rarity = newItem.getRarity(); //Get collectible rarity.
+			//Write to the file on the collectible you've obtained.
+			ItemReader.appendCollectiblesInventory("CollectiblesInventory.txt", rarity, newItem);
+			
+			JOptionPane.showMessageDialog(null, newItem, "Found", JOptionPane.INFORMATION_MESSAGE);
 			break;
 		case("Nothing"):
 			default:
-				JOptionPane.showMessageDialog(null, "Found... Nothing.", "Found", JOptionPane.INFORMATION_MESSAGE);
+				JOptionPane.showMessageDialog(null, "Found... Nothing.", "Empty Room", JOptionPane.INFORMATION_MESSAGE);
 		}
 	}
 }
