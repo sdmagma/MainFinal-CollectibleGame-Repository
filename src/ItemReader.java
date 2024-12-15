@@ -119,19 +119,25 @@ public class ItemReader
 	 * @param fileName
 	 */
 	public static void clearContents(String fileName)
-	{
-		//Printwriter used for clearing file
-		FileWriter outputFileWriter = null;
-		
+	{	
+		//Printwriter used for clearing the file
+		PrintWriter outputFileWriter = null;
 		try
 		{
-			//Set FileWriter to NOT append the file
-			outputFileWriter = new FileWriter(new File(fileName), false);
-			outputFileWriter.close(); //Close instantly. Since we are only closing, we do not need a finally statement.
+			//Set PrintWriter to NOT append to the file
+			outputFileWriter = new PrintWriter(new FileWriter(new File(fileName), false));
 		}
 		catch(Exception e) //For if any exception happens during file clearing.
 		{
 			System.out.println("Something went wrong. Cannot clear file.");
+		}
+		finally
+		{
+			if(outputFileWriter!=null)
+			{
+				//Close the file writer
+				outputFileWriter.close();
+			}
 		}
 	}
 }
